@@ -1,10 +1,14 @@
 # SHT 账号管理系统
 
-一站式论坛账号管理解决方案，支持1024/98自动签到、回帖、评分（点赞）等功能。
+一站式论坛账号管理解决方案，支持 1024/98 自动签到、回帖、评分（点赞）等功能。
 
 ## 🚀 快速部署
 
-### 1. 创建部署目录
+### 1. 创建日志挂载目录与部署目录
+
+```bash
+sudo mkdir -p /docker-data/sht/{logs,media}
+```
 
 ```bash
 mkdir sht-deploy && cd sht-deploy
@@ -12,11 +16,13 @@ mkdir sht-deploy && cd sht-deploy
 
 ### 2. 下载配置文件
 
+下载 docker-compose.yml
 ```bash
-# 下载 docker-compose.yml
 curl -O https://raw.githubusercontent.com/shtsys/sht-deploy/main/docker-compose.yml
+```
 
-# 下载环境变量模板
+下载环境变量模板
+```bash
 curl -O https://raw.githubusercontent.com/shtsys/sht-deploy/main/.env.example
 ```
 
@@ -24,8 +30,8 @@ curl -O https://raw.githubusercontent.com/shtsys/sht-deploy/main/.env.example
 
 ```bash
 cp .env.example .env
-# 编辑 .env 文件，设置 MYSQL_PASSWORD 和 REDIS_PASSWORD
 ```
+> 编辑 .env 文件，设置 MYSQL_PASSWORD 和 REDIS_PASSWORD
 
 ### 4. 启动服务
 
@@ -69,4 +75,3 @@ docker compose up -d
 docker compose pull
 docker compose up -d
 ```
-
