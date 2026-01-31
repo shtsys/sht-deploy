@@ -2,7 +2,7 @@
 set -e
 
 # 如果需要的话，把下面变量改成你自己的容器名
-APP_CONTAINER="sht"
+APP_CONTAINER="sht-api"
 
 echo "🚀 在容器 $APP_CONTAINER 中依次执行数据库初始化脚本..."
 
