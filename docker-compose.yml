@@ -17,6 +17,8 @@ services:
     depends_on:
       sht-api:
         condition: service_healthy
+    volumes:
+      - /docker-data/sht/media:/usr/share/nginx/html/media:ro
     networks:
       - sht-network
     healthcheck:
